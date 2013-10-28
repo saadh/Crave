@@ -3,7 +3,8 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-gem 'spree', github: 'spree/spree', branch: '2-1-stable'
+#gem 'spree', github: 'spree/spree', branch: '2-1-stable'
+gem 'spree', path: 'spree'
 gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '2-1-stable'
 
 # Use mysql as the database for Active Record

@@ -11,11 +11,11 @@
 <% if products.any? %>
 
   <% products.each do |product| %>
-  <div class="row">
+  <div class="columns eight omega">
     <div data-hook="product_show" itemscope itemtype="http://schema.org/Product">
       <% @body_id = 'product-details' %>
 
-  <div class="columns six alpha" data-hook="product_left_part">
+  <div class="" data-hook="product_left_part">
     <div class="row" data-hook="product_left_part_wrap">
 
       <div id="product-images" data-hook="product_images">
@@ -44,9 +44,9 @@
     </div>
   </div>
 
-  <div class="columns ten omega" data-hook="product_right_part">
+  <div class="" data-hook="product_right_part">
     <div class="row" data-hook="product_right_part_wrap">
-
+      
       <div id="product-description" data-hook="product_description">
 
         <h1 class="product-title" itemprop="name"><%#= accurate_title %><%= product.name %></h1>

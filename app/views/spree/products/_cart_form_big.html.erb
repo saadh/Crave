@@ -7,8 +7,8 @@
         <ul>
           <% product.variants_and_option_values(current_currency).each_with_index do |variant, index| %>
             <li>
-              <%= radio_button_tag "products[#{@product.id}]", variant.id, index == 0, 'data-price' => display_price(variant) %>
-              <label for="<%= ['products', @product.id, variant.id].join('_') %>">
+              <%= radio_button_tag "products[#{product.id}]", variant.id, index == 0, 'data-price' => display_price(variant) %>
+              <label for="<%= ['products', product.id, variant.id].join('_') %>">
                 <span class="variant-description">
                   <%= variant_options variant %>
                 </span>

@@ -6,6 +6,8 @@ gem 'rails', '4.0.0'
 #gem 'spree', github: 'spree/spree', branch: '2-1-stable'
 gem 'spree', path: 'spree'
 gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '2-1-stable'
+#gem 'spree_gateway', github: 'spree/spree_gateway', branch: '2-1-stable'
+gem 'spree_paypal_express', :github => "radar/better_spree_paypal_express", :branch => "2-1-stable"
 
 # Use mysql as the database for Active Record
 gem 'mysql2'

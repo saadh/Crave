@@ -1,10 +1,68 @@
-<%# content_for :sidebar do %>
-  <!--<div data-hook="homepage_sidebar_navigation">
-    <%= render :partial => 'spree/shared/taxonomies' %>
-  </div>-->
-<%# end %>
+<%
+  paginated_products = @searcher.retrieve_products if params.key?(:keywords)
+  paginated_products ||= @products
+  %>
 
-<div data-hook="homepage_products">
-  <%= render :partial => 'spree/shared/products_big', :locals => { :products => @products } %>
-</div>
+<% if @products.empty? %>
+  <%= Spree.t(:no_products_found) %>
+<% end %>
 
+<% if @products.any? %>
+
+  <% @products.in_groups_of(3).each do |group| %>
+    <div class="row-fluid menu-row">
+      <% group.compact.each do |product| %>
+        
+        <div class="meal-feature span4">
+          <div class="image-wrapper">
+            <!-- <img class="Food-Image" src="/assets/photodune-1018589-lamb-dinner-s.jpg" /> -->
+            <% if defined?(image) && image %>
+              <%= image_tag image.attachment.url(:product), :itemprop => "image" %>
+            <% else %>
+              <% puts group %>
+              <% puts product.inspect %>
+              <%= product_image(product, :itemprop => "image") %>
+            <% end %>
+          </div>
+          
+          <div class="description-wrapper row-fluid">
+            <div class="left span8">
+              <h3 class="food-name"><%= product.name %></h3>
+              <p class="MenuDetail"><%= product_description(product) rescue Spree.t(:product_has_no_description) %></p>
+            </div>
+
+            <div class="right span4">
+              <%= form_for :order, :url => populate_orders_path do |f| %>
+                <% if product.price_in(current_currency) and !product.price.nil? %>
+                  <h3 class="Price"><%= display_price(product) %></h3>
+                  
+                  <% if product.master.in_stock? %>
+                    <link itemprop="availability" href="http://schema.org/InStock" />
+                  <% end %> 
+
+                  <%#= number_field_tag (product.variants_and_option_values.any? ? :quantity : "variants[#{product.master.id}]"),1, :class => 'title', :min => 1 %>
+                  <%= hidden_field_tag (product.variants_and_option_values.any? ? :quantity : "variants[#{product.master.id}]"),1, :class => 'title' %>
+                  
+                  <%= button_tag :class => 'btn AddButton', :id => 'add-to-cart-button', :type => :submit do %>
+                    <%= Spree.t(:add_to_cart) %>
+                  <% end %>
+                  
+                  <!-- <button class="btn AddButton">+ ADD</button> -->
+                <% else %>
+                  <div>
+                    <span class="price selling" itemprop="price"><%= Spree.t('product_not_available_in_this_currency') %></span>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
+
+<% if paginated_products.respond_to?(:num_pages) %>
+  <%= paginate paginated_products %>
+<% end %>

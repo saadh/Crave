@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  
+  <head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Actor' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
+    <%== meta_data_tags %>
+    <%= canonical_tag %>
+    <%= favicon_link_tag image_path('favicon.ico') %>
+    <link href="https://fonts.googleapis.com/css?family=Limelight|Flamenco|Federo|Yesteryear|Josefin Sans|Spinnaker|Sansita One|Handlee|Droid Sans|Oswald:400,300,700" media="screen" rel="stylesheet" type="text/css" />
+    <%= stylesheet_link_tag 'crave/main' %>
+    <%= csrf_meta_tags %>
+    <%= javascript_include_tag 'store/all' %>
+    <%= render "spree/shared/routes" %>
+    <%= yield :head %>
+    <!-- Typekit fonts require an account and a kit containing the fonts used. see https://typekit.com/plans for details. <script type="text/javascript" src="//use.typekit.net/YOUR_KIT_ID.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+-->
+ <title>CRAVE - Great Food Delivered</title>
+  </head>
+  
+  <body>
+    <div id="page-wrapper">
+      <div id="absolute-wrapper">
+        <button class="btn btn-1 btn-4">SIGN UP</button>
+        <div class="image image-1">
+          <div class="Header" id="TopBar">
+            <h1 class="heading MainLogo" id="Logo">C &nbsp;R &nbsp;A &nbsp;V &nbsp;E&nbsp;</h1>
+            <% if spree_current_user %>
+              <a href="/account" style="color:white;" class="heading Link" id="LoginLink">My Account</a>
+              <a href="/logout" class="btn Button btn-1 btn-2" id="SignupButton">LOGOUT</a>
+            <% else %>
+              <h1 class="heading Link" id="LoginLink">L O G I N</h1>
+              <button class="btn Button btn-1 btn-2" id="SignupButton">SIGN UP</button>  
+            <% end %>
+          </div>
+          <div class="Box1" id="SplashBox">
+            <h2 id="GourmetDinners" class="heading Head1">GOURMET DINNERS&nbsp;DELIVERED.</h2>
+            <div class="dom-body-text paragraph Text-2" id="FirstDescription">
+              <p>Prepared meals from local chefs. Delivered to your door.</p>
+            </div>
+            <a href="#MenuToday" class="btn BigOrangeButton btn-2 btn-3" id="CheckTodaysMenu">SEE WHAT'S COOKING</a>
+          </div>
+        </div>
+        <h2 id="MenuToday" class="heading Heading2">ON THE MENU TODAY</h2>
+        <div class="dom-body-text paragraph WhereServing" id="EdinburghAreas">
+          <p>serving the edinburgh central area&nbsp;</p>
+        </div>
+
+<!--Today's Menu First Row-->
+
+<div id="Menu-Today" class="container">
+        
+        <%= yield %>
+  
+</div>
+
+
+<!-- Bottom End Footer -->
+
+
+        <div class="Footer" id="Bottom-Border-3">
+          <h2 class="heading heading-1 heading-3">+</h2>
+          <h2 id="Heading3" class="heading HowItWorks heading-1">HOW CRAVE WORKS</h2>
+          <h4 class="heading heading-2 heading-4">WE DELIVER</h4>
+          <h4 class="heading heading-2 heading-5">CHEFS COOK</h4>
+          <h4 class="heading heading-2 heading-6">YOU ORDER</h4>
+          <div class="paragraph paragraph-1">
+            <p>Your meals arrive in 30 minutes</p>
+          </div>
+          <div class="paragraph paragraph-2">
+            <p>Chefs prepare fresh, healthy meals for you</p>
+          </div>
+          <div class="paragraph paragraph-3">
+            <p>View our daily menu and make your picks</p>
+          </div>
+        </div>
+        <div class="BlackDisplay" id="BlackBar">
+          <h2 id="Heading4" class="heading TheApp">the crave app</h2>
+          <h2 class="heading heading-7">+</h2>
+          <div class="dom-body-text paragraph">
+            <p>YOUR PERSONAL CHEF IN YOUR POCKET</p>
+          </div>
+        </div>
+        <img src="/assets/phone-1x.png" class="image image-2">
+        <button class="btn BigOrangeButton btn-2 btn-3" id="ComingSoon">COMING SOON</button>
+        <div class="Footer" id="Bottom-Border">
+          <div class="dom-body-text paragraph paragraph-4 paragraph-5 paragraph-9">
+            <p>DISCOVER CRAVE</p>
+          </div>
+          <div class="dom-body-text paragraph paragraph-4 paragraph-6">
+            <p>Need help?</p>
+          </div>
+          <div class="dom-body-text paragraph paragraph-7 paragraph-10">
+            <p>our story</p>
+          </div>
+          <div class="dom-body-text paragraph paragraph-7 paragraph-8 paragraph-11">
+            <p>info@eatcrave.co.uk</p>
+          </div>
+          <div class="dom-body-text paragraph paragraph-6 paragraph-7 paragraph-8">
+            <p>Email:&nbsp;</p>
+          </div>
+          <div class="dom-body-text paragraph paragraph-12">
+            <p>the good food&nbsp;mission</p>
+          </div>
+          <div class="dom-body-text paragraph paragraph-13">
+            <p>Phone:&nbsp;</p>
+          </div>
+          <div class="dom-body-text paragraph paragraph-5 paragraph-7">
+            <p>jobs</p>
+          </div>
+          <div class="dom-body-text paragraph paragraph-7 paragraph-14">
+            <p>020300-456-987</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>

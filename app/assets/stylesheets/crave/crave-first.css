@@ -1,0 +1,557 @@
+html {
+  background-color: #e7facb;
+  background-image: url(/assets/grouped-layout-test-1background.png);
+  background-repeat: repeat;
+  background-position: top center;
+}
+body {
+  padding-left: 0;
+  padding-right: 0;
+  background: transparent #fff;
+}
+#page-wrapper {
+  position: relative;
+  width: 1250px;
+  /* centers the document */
+  margin: 0 auto;
+  /*
+  hides anything drawn off canvas.
+  remove overflow and height to see things drawn off canvas.
+  */
+  overflow: hidden;
+  height: 3400px;
+}
+/* This makes absolutely positioned elements like p, h1,
+     and some bootstrap elements placed properly. */
+ #absolute-wrapper p, #absolute-wrapper h1, #absolute-wrapper h2, #absolute-wrapper h3, #absolute-wrapper h4, #absolute-wrapper h5, #absolute-wrapper h6 {
+  margin-top: 0 !important;
+}
+#absolute-wrapper {
+  position: relative;
+  width: 1250px;
+  margin: 0 auto;
+  height: 1px;
+}
+#absolute-wrapper .btn.btn-1 {
+  background: #020202;
+  background-image: -moz-linear-gradient(270deg, #020202 100%, #e6e6e6 100%);
+  background-image: -webkit-linear-gradient(270deg, #020202 100%, #e6e6e6 100%);
+  background-image: -o-linear-gradient(270deg, #020202 100%, #e6e6e6 100%);
+  background-image: linear-gradient(180deg, #020202 100%, #e6e6e6 100%);
+  border: 1px solid #99e54e;
+  font-size: 16px;
+  font-family: "raleway";
+  color: #fffcfc;
+  height: 35px;
+  width: 100px;
+}
+
+#absolute-wrapper .btn {
+  background: transparent;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+  text-shadow: none;
+  font-size: 20px;
+  color: inherit;
+  border-radius: 0px;
+  border: 1px solid #99e54e;
+  height: 40px;
+  width: 101px;
+  position: absolute;
+  
+}
+
+
+#absolute-wrapper .btn.btn-2 {
+  text-shadow: none;
+}
+#absolute-wrapper .btn.btn-3 {
+  background: #f47615
+  background-image: -moz-linear-gradient(270deg, #f47615 100%, #e6e6e6 100%);
+  background-image: -webkit-linear-gradient(270deg, #f47615 100%, #e6e6e6 100%);
+  background-image: -o-linear-gradient(270deg, #f47615 100%, #e6e6e6 100%);
+  background-image: linear-gradient(180deg, #f47615 100%, #e6e6e6 100%);
+  font-size: 21px;
+  color: inherit;
+  border: none;
+  width: 306px;
+  height: 70px;
+}
+#absolute-wrapper .btn.btn-4 {
+  height: 29px;
+  top: -230px;
+  left: 977px;
+}
+#absolute-wrapper .image {
+  position: absolute;
+}
+#absolute-wrapper .image.image-1 {
+  width: 1251px;
+  height: 800px;
+  top: 0px;
+  left: 0px;
+  background: transparent url(/assets/photodune-1018589-lamb-dinner-s.jpg) top left no-repeat;
+  background-size: 100% 100%;
+}
+#TopBar {
+  background: rgba(0, 0, 0, 0.54902);
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0px;
+  border-top: none;
+  border-right: none;
+  border-bottom: 1px solid #f2f6ee;
+  border-left: none;
+  width: 1250px;
+  height: 58.88888883590698px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+#Logo {
+  font-size: 32px;
+  text-align: center;
+  color: #fcf6f6;
+  font-weight: normal;
+  font-family:"raleway";
+  width: 200px;
+  height: 41px;
+  position: absolute;
+  top: 11px;
+  left: 38px;
+}
+#LoginLink {
+  font-weight: normal;
+  color: #fffcfc;
+  font-size: 19px;
+  font-family:"raleway";
+  width: 106px;
+  height: 30px;
+  position: absolute;
+  top: 13px;
+  left: 986px;
+}
+#SignupButton {
+  height: 34px;
+  top: 15px;
+  left: 1098px;
+}
+#SplashBox {
+  background: rgba(5, 5, 5, 0.792157);
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0px;
+  border: none;
+  width: 650px;
+  height: 265px;
+  position: absolute;
+  top: 400px;
+  left: 316px;
+}
+#GourmetDinners {
+  font-family:"oswald";
+  font-weight: normal;
+  font-size: 34pt;
+  color: #e8e1e1;
+  line-height: 50px;
+  text-align: center;
+  width: 586px;
+  height: 119px;
+  position: absolute;
+  top: 33px;
+  left: 38px;
+}
+#FirstDescription {
+  width: 570px;
+  height: 69px;
+  position: absolute;
+  top: 100px;
+  left: 39px;
+}
+#FirstDescription p {
+  font-family:"raleway";
+  font-size: 20px;
+  color: #fdfafa;
+  line-height: 31px;
+  text-align: center;
+}
+#CheckTodaysMenu {
+  font-family:"raleway";
+  height: 74px;
+  top: 160px;
+  left: 176px;
+}
+#MenuToday {
+  font-family:"oswald";
+  font-weight: normal;
+  font-size: 30pt;
+  background: transparent;
+  color: #060606;
+  width: 339px;
+  height: 41px;
+  position: absolute;
+  top: 847px;
+  left: 477px;
+}
+#EdinburghAreas {
+  width: 389px;
+  height: 36px;
+  position: absolute;
+  top: 896px;
+  left: 452px;
+}
+#EdinburghAreas p {
+  font-family:"raleway";
+  font-size: 24px;
+  color: #020101;
+  line-height: 29px;
+}
+#Bottom-Border-3 {
+  background: #fffcfc;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0px 0px 2px 2px;
+  border-top: 1px solid #333333;
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+  width: 1250px;
+  height: 537.888888835907px;
+  position: absolute;
+  top: 1949px;
+  left: 0px;
+}
+#Bottom-Border-3 .heading {
+  font-weight: normal;
+  position: absolute;
+}
+#Bottom-Border-3 .heading.heading-1 {
+  font-size: 30pt;
+  color: #090909;
+}
+#Bottom-Border-3 .heading.heading-2 {
+  font-family:"helvetica";
+  color: rgba(0, 0, 0, 0.976471);
+  font-size: 32pt;
+  line-height: 36px;
+  top: 168px;
+}
+#Bottom-Border-3 .heading.heading-3 {
+  font-family:"raleway";
+  width: 23px;
+  height: 44px;
+  top: 35px;
+  left: 460px;
+}
+#Heading3 {
+  font-family:"oswald";
+  width: 334px;
+  height: 42px;
+  top: 38px;
+  left: 492px;
+}
+#Bottom-Border-3 .heading-2.heading-4 {
+  width: 201px;
+  height: 76px;
+  left: 912px;
+}
+#Bottom-Border-3 .heading-2.heading-5 {
+  width: 254px;
+  height: 66px;
+  left: 519px;
+}
+#Bottom-Border-3 .heading-2.heading-6 {
+  width: 252px;
+  height: 78px;
+  left: 165px;
+}
+#Bottom-Border-3 .paragraph {
+  position: absolute;
+  top: 270px;
+}
+#Bottom-Border-3 .paragraph.paragraph-1 {
+  width: 257px;
+  height: 72px;
+  left: 888px;
+}
+#Bottom-Border-3 .paragraph.paragraph-1 p {
+  font-family:"helvetica";
+  font-size: 23pt;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.976471);
+  line-height: 29px;
+}
+#Bottom-Border-3 .paragraph.paragraph-2 {
+  width: 297px;
+  height: 76px;
+  left: 510px;
+}
+#Bottom-Border-3 .paragraph.paragraph-2 p {
+  font-family:"helvetica";
+  text-align: center;
+  color: rgba(0, 0, 0, 0.976471);
+  line-height: 29px;
+  font-size: 23pt;
+}
+#Bottom-Border-3 .paragraph.paragraph-3 {
+  width: 292px;
+  height: 91px;
+  left: 153px;
+}
+#Bottom-Border-3 .paragraph.paragraph-3 p {
+  color: rgba(0, 0, 0, 0.976471);
+  text-align: center;
+  font-family:"helvetica";
+  font-size: 23pt;
+  line-height: 29px;
+}
+#BlackBar {
+  background: rgba(14, 13, 13, 0.619608);
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0px 0px 2px 2px;
+  border: none;
+  width: 915px;
+  height: 365px;
+  position: absolute;
+  top: 2489px;
+  left: 335px;
+}
+#Heading4 {
+  font-family:"oswald";
+  font-weight: normal;
+  font-size: 30pt;
+  color: #fffcfc;
+  width: 224px;
+  height: 43px;
+  position: absolute;
+  top: 125px;
+  left: 616px;
+}
+
+#BlackBar .heading {
+  font-weight: normal;
+  font-size: 30pt;
+  color: #fffcfc;
+  position: absolute;
+}
+#BlackBar .heading.heading-7 {
+  font-family:"raleway";
+  width: 23px;
+  height: 46px;
+  top: 131px;
+  left: 584px;
+}
+#BlackBar .dom-body-text.paragraph {
+  width: 513px;
+  height: 36px;
+  position: absolute;
+  top: 191px;
+  left: 343px;
+}
+#BlackBar .dom-body-text.paragraph p {
+  font-family:"raleway";
+  font-size: 24px;
+  color: #fffcfc;
+  line-height: 29px;
+}
+#absolute-wrapper .image.image-2 {
+  width: 287px;
+  height: 601px;
+  top: 2369px;
+  left: 113px;
+}
+#ComingSoon {
+  font-family:"raleway";
+  height: 72px;
+  top: 2455px;
+  left: 577px;
+}
+#Bottom-Border {
+  background: #fffcfc;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0px 0px 2px 2px;
+  border-top: 2px solid #333333;
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+  width: 1313px;
+  height: 465.888888835907px;
+  position: absolute;
+  top: 3152px;
+  left: -36px;
+}
+#Bottom-Border .dom-body-text.paragraph.paragraph-4 {
+  height: 34px;
+  top: 40px;
+}
+#Bottom-Border .dom-body-text.paragraph {
+  position: absolute;
+}
+#Bottom-Border .dom-body-text.paragraph.paragraph-5 {
+  left: 110px;
+}
+#Bottom-Border .dom-body-text.paragraph.paragraph-6 {
+  left: 889px;
+}
+#Bottom-Border .dom-body-text.paragraph.paragraph-7 {
+  height: 36px;
+}
+#Bottom-Border .dom-body-text.paragraph.paragraph-8 {
+  top: 95px;
+}
+#Bottom-Border .dom-body-text.paragraph.paragraph-9 {
+  width: 269px;
+}
+#Bottom-Border .dom-body-text.paragraph.paragraph-4.paragraph-5.paragraph-9 p {
+  font-size: 24px;
+  color: #020101;
+  line-height: 29px;
+  font-family:"helvetica";
+  font-weight: bold;
+}
+#Bottom-Border .dom-body-text.paragraph.paragraph-4.paragraph-6 {
+  width: 186px;
+}
+#Bottom-Border .dom-body-text.paragraph.paragraph-4.paragraph-6 p {
+  color: #020101;
+  line-height: 29px;
+  font-family:"helvetica";
+  font-size: 28px;
+}
+#Bottom-Border .dom-body-text.paragraph.paragraph-7.paragraph-10 {
+  width: 116px;
+  top: 76px;
+  left: 108px;
+}
+#Bottom-Border .dom-body-text.paragraph.paragraph-7.paragraph-10 p {
+  font-family:"raleway";
+  font-size: 24px;
+  color: #020101;
+  line-height: 29px;
+}
+#Bottom-Border .dom-body-text.paragraph.paragraph-7.paragraph-8.paragraph-11 {
+  width: 239px;
+  left: 996px;
+}
+#Bottom-Border .dom-body-text.paragraph.paragraph-7.paragraph-8.paragraph-11 p {
+  font-family:"raleway";
+  font-size: 24px;
+  color: #020101;
+  line-height: 29px;
+}
+#Bottom-Border .dom-body-text.paragraph.paragraph-6.paragraph-7.paragraph-8 {
+  width: 64px;
+}
+#Bottom-Border .dom-body-text.paragraph.paragraph-6.paragraph-7.paragraph-8 p {
+  font-family:"raleway";
+  font-size: 24px;
+  color: #020101;
+  line-height: 29px;
+}
+#Bottom-Border .dom-body-text.paragraph.paragraph-12 {
+  width: 266px;
+  height: 33px;
+  top: 106px;
+  left: 109px;
+}
+#Bottom-Border .dom-body-text.paragraph.paragraph-12 p {
+  font-family:"raleway";
+  font-size: 24px;
+  color: #020101;
+  line-height: 29px;
+}
+#Bottom-Border .dom-body-text.paragraph.paragraph-13 {
+  width: 82px;
+  height: 37px;
+  top: 135px;
+  left: 890px;
+}
+#Bottom-Border .dom-body-text.paragraph.paragraph-13 p {
+  font-family:"raleway";
+  font-size: 24px;
+  color: #020101;
+  line-height: 29px;
+}
+#Bottom-Border .dom-body-text.paragraph.paragraph-5.paragraph-7 {
+  width: 117px;
+  top: 136px;
+}
+#Bottom-Border .dom-body-text.paragraph.paragraph-5.paragraph-7 p {
+  font-family:"raleway";
+  font-size: 24px;
+  color: #020101;
+  line-height: 29px;
+}
+#Bottom-Border .dom-body-text.paragraph.paragraph-7.paragraph-14 {
+  width: 241px;
+  top: 138px;
+  left: 995px;
+}
+#Bottom-Border .dom-body-text.paragraph.paragraph-7.paragraph-14 p {
+  font-family:"raleway";
+  font-size: 24px;
+  color: #020101;
+  line-height: 29px;
+}
+            #Menu-Today{
+              position: absolute;
+              left: 50px;
+              top: 1000px;
+            }
+            .menu-row{
+                margin-bottom: 50px;
+            }
+            .Food-Image{
+                max-width: 100%;
+                width: 100%;
+            }
+            .description-wrapper{
+                position: relative;
+            }
+
+            .description-wrapper .AddButton{
+                position: absolute;
+                bottom: 10px;
+                right: 0px;
+            }
+            .description-wrapper [class*="span"]{
+                position: static;
+                padding: 0px;
+            }
+            .description-wrapper .right{
+                text-align: right;
+            }
+            .AddButton{
+                background: transparent;
+                -moz-box-shadow: none;
+                -webkit-box-shadow: none;
+                -o-box-shadow: none;
+                box-shadow: none;
+                text-shadow: none;
+                font-size: 20px;
+                color: #f47615;
+                border-radius: 0px;
+                border: 1px solid #99e54e;
+                height: 40px;
+                width: 101px;
+
+            }
+
+.food-name {
+    font-size: 19px;
+    font-weight: bold;
+}

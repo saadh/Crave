@@ -34,7 +34,7 @@ body {
 }
 #absolute-wrapper .btn.btn-1 {
   background: #020202;
-  background-image: -moz-linear-gradient(270deg, #020202 100%, #e6e6e6 100%);
+  /*background-image: -moz-linear-gradient(270deg, #020202 100%, #e6e6e6 100%);*/
   background-image: -webkit-linear-gradient(270deg, #020202 100%, #e6e6e6 100%);
   background-image: -o-linear-gradient(270deg, #020202 100%, #e6e6e6 100%);
   background-image: linear-gradient(180deg, #020202 100%, #e6e6e6 100%);
@@ -69,7 +69,7 @@ body {
 }
 #absolute-wrapper .btn.btn-3 {
   background: #f47615
-  background-image: -moz-linear-gradient(270deg, #f47615 100%, #e6e6e6 100%);
+  /* background-image: -moz-linear-gradient(270deg, #f47615 100%, #e6e6e6 100%); */
   background-image: -webkit-linear-gradient(270deg, #f47615 100%, #e6e6e6 100%);
   background-image: -o-linear-gradient(270deg, #f47615 100%, #e6e6e6 100%);
   background-image: linear-gradient(180deg, #f47615 100%, #e6e6e6 100%);

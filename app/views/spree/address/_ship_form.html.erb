@@ -61,7 +61,7 @@
 
   <p class="field" id=<%="#{address_id}zipcode" %>>
     <%= form.label :zipcode, Spree.t(:zip) %><span class="required">*</span><br />
-    <%= form.text_field :zipcode, :class => 'required', :readonly => true %>
+    <%= form.text_field :zipcode, :class => 'required' %>
   </p>
   <p class="field" id=<%="#{address_id}phone" %>>
     <%= form.label :phone, Spree.t(:phone) %><span class="required">*</span><br />

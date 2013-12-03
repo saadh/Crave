@@ -29,21 +29,21 @@
   <%= submit_tag Spree.t(:save_and_continue), :class => 'continue button primary' %>
 </div>
 
-<script>
-    $(document).ready(function(){
-        var pincodes = {"Newington": "EH44"}
-        var pin = $('#order_ship_address_attributes_address2').val();
-        $('#order_ship_address_attributes_zipcode, #order_bill_address_attributes_zipcode').val(pincodes[pin]);
+<!-- <script>
+//     $(document).ready(function(){
+//         var pincodes = {"Newington": "EH44"}
+//         var pin = $('#order_ship_address_attributes_address2').val();
+//         $('#order_ship_address_attributes_zipcode, #order_bill_address_attributes_zipcode').val(pincodes[pin]);
         
-        $('#order_ship_address_attributes_address2').on('change', function(){
-            var pin = $(this).val();
-            $('#order_ship_address_attributes_zipcode').val(pincodes[pin]);
-        });
+//         $('#order_ship_address_attributes_address2').on('change', function(){
+//             var pin = $(this).val();
+//             $('#order_ship_address_attributes_zipcode').val(pincodes[pin]);
+//         });
 
-        $('#order_bill_address_attributes_address2').on('change', function(){
-            var pin = $(this).val();
-            $('#order_bill_address_attributes_zipcode').val(pincodes[pin]);
-        });
+//         $('#order_bill_address_attributes_address2').on('change', function(){
+//             var pin = $(this).val();
+//             $('#order_bill_address_attributes_zipcode').val(pincodes[pin]);
+//         });
 
         // $('#order_use_billing').on('click', function(){
         //     if($(this).is(':checked') == 'true'){
@@ -55,5 +55,6 @@
         //     }
         // });
         
-    });
-</script>
+//     });
+ </script>
+-->

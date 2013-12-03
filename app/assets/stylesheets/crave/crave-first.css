@@ -200,11 +200,11 @@ body {
   left: 477px;
 }
 #EdinburghAreas {
-  width: 389px;
+  /*width: 389px;*/
   height: 36px;
   position: absolute;
   top: 896px;
-  left: 452px;
+  left: 366px;
 }
 #EdinburghAreas p {
   font-family:"raleway";

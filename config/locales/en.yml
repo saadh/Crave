@@ -752,6 +752,14 @@ en:
         subtotal: ! 'Subtotal: %{subtotal}'
         thanks: Thank you for your business.
         total: ! 'Order Total: %{total}'
+      cart_email:
+        dear_customer: Admin,
+        instructions: Please review and retain the following order information for your records.
+        order_summary: Add to Cart Notification
+        subject: Someone added an item to their cart
+        subtotal: ! 'Subtotal: %{subtotal}'
+        thanks: Thank you.
+        total: ! 'Order Total: %{total}'
     order_not_found: We couldn't find your order. Please try that action again.
     order_number: Order
     order_populator:

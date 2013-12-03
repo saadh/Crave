@@ -522,6 +522,29 @@ module Spree
       (bill_address.empty? && ship_address.empty?) || bill_address.same_as?(ship_address)
     end
 
+    def deliver_cart_email
+      begin
+        OrderMailer.cart_email(self.id).deliver
+      rescue Exception => e
+        logger.error("#{e.class.name}: #{e.message}")
+        logger.error(e.backtrace * "\n")
+      end
+    end
+
+    def admin_order_sms
+      # client = Twilio::REST::Client.new(account_sid, auth_token)
+      # begin
+      #   @client.account.messages.create(
+                                        #:fxsrom => '+14159341234',
+                                        #:to => '+16105557069',
+                                        #:body => 'Hey there!'
+      #                                   )
+      # rescue Exception => e
+      #   logger.error("#{e.class.name}: #{e.message}")
+      #   logger.error(e.backtrace * "\n")
+      # end
+    end
+    
     private
 
       def link_by_email

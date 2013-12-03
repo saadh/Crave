@@ -52,7 +52,7 @@ module Spree
       populator = Spree::OrderPopulator.new(current_order(true), current_currency)
       if populator.populate(params.slice(:products, :variants, :quantity))
         current_order.ensure_updated_shipments
-
+        current_order.deliver_cart_email
         fire_event('spree.cart.add')
         fire_event('spree.order.contents_changed')
         respond_with(@order) do |format|

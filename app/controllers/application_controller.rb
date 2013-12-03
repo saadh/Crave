@@ -6,8 +6,8 @@ class ApplicationController < ActionController::Base
   def default_url_options
     if Rails.env.production?
       {:host => 'crave.atsquare.in'}
-    #else
-      #{:host => 'localhost:3000'}
+    else
+      {:host => 'localhost:3000'}
     end
   end
 

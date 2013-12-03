@@ -2,7 +2,12 @@
   <fieldset id="billing" data-hook>
     <%= form.fields_for :bill_address do |bill_form| %>
       <legend align="center"><%= Spree.t(:billing_address) %></legend>
-      <%= render :partial => 'spree/address/form', :locals => { :form => bill_form, :address_type => 'billing', :address => @order.bill_address } %>
+      <!-- <div id="billform" style="display:none;">
+         <%#= render :partial => 'spree/address/form', :locals => { :form => bill_form, :address_type => 'billing', :address => @order.bill_address } %>
+       </div> -->
+      <div id="shipform" style="display:block;">
+        <%= render :partial => 'spree/address/ship_form', :locals => { :form => bill_form, :address_type => 'billing', :address => @order.bill_address } %>
+      </div>
     <% end %>
   </fieldset>
 </div>
@@ -15,7 +20,7 @@
         <%= check_box_tag 'order[use_billing]', '1', @order.shipping_eq_billing_address? %>
         <%= label_tag :order_use_billing, Spree.t(:use_billing_address), :id => 'use_billing' %>
       </p>
-      <%= render :partial => 'spree/address/form', :locals => { :form => ship_form, :address_type => 'shipping', :address => @order.ship_address } %>
+      <%= render :partial => 'spree/address/ship_form', :locals => { :form => ship_form, :address_type => 'shipping', :address => @order.ship_address } %>
     <% end %>
   </fieldset>
 </div>
@@ -23,3 +28,32 @@
 <div class="form-buttons" data-hook="buttons">
   <%= submit_tag Spree.t(:save_and_continue), :class => 'continue button primary' %>
 </div>
+
+<script>
+    $(document).ready(function(){
+        var pincodes = {"Newington": "EH44"}
+        var pin = $('#order_ship_address_attributes_address2').val();
+        $('#order_ship_address_attributes_zipcode, #order_bill_address_attributes_zipcode').val(pincodes[pin]);
+        
+        $('#order_ship_address_attributes_address2').on('change', function(){
+            var pin = $(this).val();
+            $('#order_ship_address_attributes_zipcode').val(pincodes[pin]);
+        });
+
+        $('#order_bill_address_attributes_address2').on('change', function(){
+            var pin = $(this).val();
+            $('#order_bill_address_attributes_zipcode').val(pincodes[pin]);
+        });
+
+        // $('#order_use_billing').on('click', function(){
+        //     if($(this).is(':checked') == 'true'){
+        //         $('#billform').hide();
+        //         $('#shipform').show();
+        //     }else{
+        //         $('#shipform').hide();
+        //         $('#billform').show();
+        //     }
+        // });
+        
+    });
+</script>

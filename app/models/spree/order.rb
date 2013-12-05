@@ -337,6 +337,7 @@ module Spree
       updater.run_hooks
 
       deliver_order_confirmation_email
+      self.admin_order_sms
     end
 
     def deliver_order_confirmation_email
@@ -532,17 +533,17 @@ module Spree
     end
 
     def admin_order_sms
-      # client = Twilio::REST::Client.new(account_sid, auth_token)
-      # begin
-      #   @client.account.messages.create(
-                                        #:fxsrom => '+14159341234',
-                                        #:to => '+16105557069',
-                                        #:body => 'Hey there!'
-      #                                   )
-      # rescue Exception => e
-      #   logger.error("#{e.class.name}: #{e.message}")
-      #   logger.error(e.backtrace * "\n")
-      # end
+      client = Twilio::REST::Client.new(CONFIG[:sid], CONFIG[:auth_token])
+      begin
+        @client.account.messages.create(
+                                        :from => '+441913280574',
+                                        :to => '00447506427407',
+                                        :body => 'Order Received! number: #{self.number}, total: #{self.amount} #{self.currency}'
+                                        )
+      rescue Exception => e
+        logger.error("#{e.class.name}: #{e.message}")
+        logger.error(e.backtrace * "\n")
+      end
     end
     
     private

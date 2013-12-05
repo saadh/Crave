@@ -10,5 +10,4 @@ class ApplicationController < ActionController::Base
       {:host => 'localhost:3000'}
     end
   end
-
 end

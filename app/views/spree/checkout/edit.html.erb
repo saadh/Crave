@@ -22,7 +22,7 @@
         <%= render @order.state, :form => form %>
       <% end %>
       <% if params && params[:state] == 'delivery' %>
-        <% @order.next %>
+        <%# @order.next if @order.state != 'payment'%>
         <%= form_for @order, :url => paypal_express_path(:payment_method_id => 12), :method => :post do |f| %>
           <div class="form-buttons" data-hook="buttons">
             <%= hidden_field_tag "order[payments_attributes][][payment_method_id]", 12 %>

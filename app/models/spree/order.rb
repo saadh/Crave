@@ -15,7 +15,7 @@ module Spree
       go_to_state :confirm, if: ->(order) { order.confirmation_required? }
       go_to_state :complete
       remove_transition from: :delivery, to: :confirm
-      #remove_checkout_step :delivery
+      remove_transition from: :delivery, to: :payment
     end
 
     token_resource
@@ -534,12 +534,9 @@ module Spree
 
     def admin_order_sms
       client = Twilio::REST::Client.new(CONFIG[:sid], CONFIG[:auth_token])
+      msg = "Order Received! number: #{self.number}, total: #{self.amount} #{self.currency}"
       begin
-        @client.account.messages.create(
-                                        :from => '+441913280574',
-                                        :to => '00447506427407',
-                                        :body => 'Order Received! number: #{self.number}, total: #{self.amount} #{self.currency}'
-                                        )
+        client.account.messages.create(:from => '+441913280574', :to => '00447506427407', :body => msg)
       rescue Exception => e
         logger.error("#{e.class.name}: #{e.message}")
         logger.error(e.backtrace * "\n")

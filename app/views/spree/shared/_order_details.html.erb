@@ -3,30 +3,30 @@
   <% if order.has_step?("address") %>
 
     <% if order.has_step?("delivery") %>
-      <div class="columns alpha four" data-hook="order-ship-address">
+      <div class="columns alpha five" data-hook="order-ship-address">
         <h6><%= Spree.t(:shipping_address) %> <%= link_to "(#{Spree.t(:edit)})", checkout_state_path(:address) unless @order.completed? %></h6>
         <%= render :partial => 'spree/shared/address', :locals => { :address => order.ship_address } %>
       </div>
     <% end %>
 
-    <div class="columns alpha four" data-hook="order-bill-address">
+    <div class="columns alpha five" data-hook="order-bill-address">
       <h6><%= Spree.t(:billing_address) %> <%= link_to "(#{Spree.t(:edit)})", checkout_state_path(:address) unless @order.completed? %></h6>
       <%= render :partial => 'spree/shared/address', :locals => { :address => order.bill_address } %>
     </div>
 
-    <% if @order.has_step?("delivery") %>
-      <div class="columns alpha four">
-        <h6><%= Spree.t(:shipments) %> <%= link_to "(#{Spree.t(:edit)})", checkout_state_path(:delivery) unless @order.completed? %></h6>
-        <div class="delivery">
-          <% order.shipments.each do |shipment| %>
-            <%= shipment.stock_location.name %>
-            <%= shipment.shipping_method.name %>
-            <br/>
-          <% end %>
-        </div>
-        <%= render(:partial => 'spree/shared/shipment_tracking', :locals => {:order => @order}) if @order.shipped? %>
-      </div>
-    <% end %>
+    <!-- <%# if @order.has_step?("delivery") %> -->
+    <!--   <div class="columns alpha four"> -->
+    <!--     <h6><%#= Spree.t(:shipments) %> <%= link_to "(#{Spree.t(:edit)})", checkout_state_path(:delivery) unless @order.completed? %></h6> -->
+    <!--     <div class="delivery"> -->
+    <!--       <%# order.shipments.each do |shipment| %> -->
+    <!--         <%#= shipment.stock_location.name %> -->
+    <!--         <%#= shipment.shipping_method.name %> -->
+    <!--         <br/> -->
+    <!--       <%# end %> -->
+    <!--     </div> -->
+    <!--     <%#= render(:partial => 'spree/shared/shipment_tracking', :locals => {:order => @order}) if @order.shipped? %> -->
+    <!--   </div> -->
+    <!-- <%# end %> -->
   <% end %>
 
   <div class="columns omega four">

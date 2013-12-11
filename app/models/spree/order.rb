@@ -534,7 +534,15 @@ module Spree
 
     def admin_order_sms
       client = Twilio::REST::Client.new(CONFIG[:sid], CONFIG[:auth_token])
-      msg = "Order Received! number: #{self.number}, total: #{self.amount} #{self.currency}"
+      msg = "Order Received! number: #{self.number}, total: #{self.amount} #{self.currency}, "
+      msg += "Products:"
+      self.line_items.each do |item|
+        msg += "#{item.variant.product.name}"
+      end
+      msg += "Customer Name: #{self.ship_address.firstname} #{self.ship_address.lastname}, "
+      msg += "Delivery addrs: #{self.ship_address.address1}, #{ self.ship_address.address2}, "
+      msg += "#{self.ship_address.address2} #{self.ship_address.country.name} #{self.ship_address.zipcode}, "
+      msg += "Phone: #{self.ship_address.phone}"
       begin
         client.account.messages.create(:from => '+441913280574', :to => '00447506427407', :body => msg)
       rescue Exception => e

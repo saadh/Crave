@@ -16,5 +16,20 @@
 <% end %>
 
 <%= Spree.t('order_mailer.confirm_email.total', :total => @order.display_total) %>
+============================================================
+Shipping Details:
+
+<% if !@order.ship_address.nil? %>
+<%= @order.ship_address.firstname %> <%= @order.ship_address.lastname %>
+<%= @order.ship_address.address1 %>
+<%= @order.ship_address.address2 %>
+<%= @order.ship_address.country.name if @order.ship_address.country %>
+<%= @order.ship_address.zipcode %>
+
+phone: <%= @order.ship_address.phone %>
+email: <%= @order.email %>
+
+<% end %>
+
 
 <%= Spree.t('order_mailer.confirm_email.thanks') %>

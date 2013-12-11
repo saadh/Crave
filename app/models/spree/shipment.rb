@@ -266,7 +266,7 @@ module Spree
       def after_ship
         inventory_units.each &:ship!
         adjustment.finalize!
-        send_shipped_email
+        #send_shipped_email
         touch :shipped_at
       end
 

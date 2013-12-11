@@ -34,15 +34,21 @@
                 <% if product.price_in(current_currency) and !product.price.nil? %>
                   <h3 class="Price"><%= display_price(product) %></h3>
                   
-                  <% if product.master.in_stock? %>
-                    <link itemprop="availability" href="http://schema.org/InStock" />
-                  <% end %> 
+                  <%# if product.master.in_stock? %>
+                    <!-- <link itemprop="availability" href="http://schema.org/InStock" /> -->
+                  <%# end %> 
 
                   <%#= number_field_tag (product.variants_and_option_values.any? ? :quantity : "variants[#{product.master.id}]"),1, :class => 'title', :min => 1 %>
                   <%= hidden_field_tag (product.variants_and_option_values.any? ? :quantity : "variants[#{product.master.id}]"),1, :class => 'title' %>
                   
-                  <%= button_tag :class => 'btn AddButton', :id => 'add-to-cart-button', :type => :submit do %>
-                    <%= Spree.t(:add_to_cart) %>
+                  <% if product.master.in_stock? %>
+                  
+                    <%= button_tag :class => 'btn AddButton', :id => 'add-to-cart-button', :type => :submit do %>
+                      <%= Spree.t(:add_to_cart) %>
+                    <% end %>
+                  
+                  <% else %>
+                    <a href="#" class="btn AddButton" id="add-to-cart-button">Sold</a>
                   <% end %>
                   
                   <!-- <button class="btn AddButton">+ ADD</button> -->

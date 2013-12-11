@@ -40,6 +40,9 @@
               <a href="/signup" class="btn Button btn-1 btn-2" id="SignupButton">SIGN UP</a>  
             <% end %>
           </div>
+          <div class="row" style="display:none;">
+            <%= flash_messages %>
+          </div>
           <div class="Box1" id="SplashBox">
             <h2 id="GourmetDinners" class="heading Head1">GOURMET DINNERS&nbsp;DELIVERED.</h2>
             <div class="dom-body-text paragraph Text-2" id="FirstDescription">
@@ -118,9 +121,21 @@
           <div class="dom-body-text paragraph paragraph-7 paragraph-14">
             <p>020300-456-987</p>
           </div>
+          <div class="dom-body-text paragraph paragraph-12 footer-links" style="top: 36%;">
+            <p><a href="/privacy">Privacy Policy</a></p>
+          </div>
+          <div class="dom-body-text paragraph paragraph-12 footer-links" style="top: 42%;">
+            <p><a href="/terms">Terms & Condition</a></p>
+          </div>
         </div>
       </div>
     </div>
+    <style>
+      .footer-links a {
+        text-decoration: none;
+        color:black;
+      }
+    </style>
   </body>
 
 </html>

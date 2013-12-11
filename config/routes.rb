@@ -7,7 +7,8 @@ Crave::Application.routes.draw do
   # We ask that you don't use the :as option here, as Spree relies on it being the default of "spree"
   mount Spree::Core::Engine, :at => '/'
 
-  Spree::Core::Engine.routes.prepend do
+  #Spree::Core::Engine.routes.prepend do
+  Spree::Core::Engine.add_routes do
   
     get '/terms', :to => 'home#terms'
     get '/privacy', :to => 'home#privacy'
